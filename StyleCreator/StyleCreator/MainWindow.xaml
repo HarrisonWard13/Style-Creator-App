@@ -1,0 +1,598 @@
+﻿<Window x:Class="StyleCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:StyleCreator"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tools="clr-namespace:StyleCreator.Tools"
+        xmlns:viewmodels="clr-namespace:StyleCreator.ViewModels"
+        xmlns:views="clr-namespace:StyleCreator.Views"
+        Title="MainWindow"
+        Width="1200"
+        Height="605"
+        mc:Ignorable="d">
+
+  <Window.DataContext>
+    <viewmodels:ThemeEditorViewModel />
+  </Window.DataContext>
+
+  <Grid Background="{DynamicResource BackgroundBrush}">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="10" />
+      <ColumnDefinition Width="3*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="10" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="10" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="10" />
+    </Grid.RowDefinitions>
+
+    <!--  Controls  -->
+    <Border Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="3"
+            CornerRadius="{DynamicResource ControlCornerRadius}">
+      <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid Background="{DynamicResource AccentBrush}">
+          <Grid.ColumnDefinitions>
+            <!--  Left Border  -->
+            <ColumnDefinition Width="5" />
+            <!--  Control Column A  -->
+            <ColumnDefinition Width="*" />
+            <!--  Center Diviider  -->
+            <ColumnDefinition Width="5" />
+            <!--  Control Column B  -->
+            <ColumnDefinition Width="*" />
+            <!--  Right Border  -->
+            <ColumnDefinition Width="5" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <!--  Top Border  -->
+            <RowDefinition Height="5" />
+            <!--  Must Haves  -->
+            <RowDefinition Height="50" />
+            <!--  1 Button  -->
+            <!--  2 ToggleButton  -->
+            <RowDefinition Height="80" />
+            <!--  3 TextBox  -->
+            <!--  4 ComboBox  -->
+            <RowDefinition Height="80" />
+            <!--  5 CheckBox  -->
+            <!--  6 RadioButton  -->
+            <RowDefinition Height="80" />
+            <!--  7 ListBox  -->
+            <RowDefinition Height="80" />
+            <!--  Recommended  -->
+            <RowDefinition Height="50" />
+            <!--  9 ListView  -->
+            <!--  10 TabControl  -->
+            <RowDefinition Height="80" />
+            <!--  11 Menu  -->
+            <!--  12 ScrollBar (vertical only)  -->
+            <RowDefinition Height="80" />
+            <!--  Bottom Border  -->
+            <RowDefinition Height="5" />
+          </Grid.RowDefinitions>
+
+          <Label Grid.Row="{x:Static tools:GridLayout.HeaderRowA}"
+                 Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}"
+                 Grid.ColumnSpan="3"
+                 HorizontalAlignment="Center"
+                 Content="Minimum"
+                 FontSize="30" />
+
+          <!--  1 Button  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowA}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="Button" />
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Content="Default" />
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Content="Primary" />
+            <Button Grid.Row="2"
+                    Grid.Column="2"
+                    Content="Disabled"
+                    IsEnabled="False" />
+          </Grid>
+          <!--  2ToggleButton  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowA}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnB}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="ToggleButton" />
+            <ToggleButton Grid.Row="2"
+                          Grid.Column="0"
+                          Content="Default" />
+            <ToggleButton Grid.Row="2"
+                          Grid.Column="1"
+                          Content="Toggled"
+                          IsChecked="True" />
+            <ToggleButton Grid.Row="2"
+                          Grid.Column="2"
+                          Content="Disabled"
+                          IsEnabled="False" />
+          </Grid>
+          <!--  3 TextBox  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowB}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="TextBox" />
+            <TextBox Grid.Row="2"
+                     Grid.Column="0"
+                     Text="Normal" />
+            <TextBox Grid.Row="2"
+                     Grid.Column="1"
+                     IsEnabled="False"
+                     Text="Disabled" />
+            <TextBox Grid.Row="2"
+                     Grid.Column="2"
+                     Focusable="True"
+                     Text="Focused" />
+          </Grid>
+          <!--  4 ComboBox  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowB}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnB}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="ComboBox" />
+            <ComboBox Grid.Row="2"
+                      Grid.Column="0"
+                      Text="Closed">
+              <ComboBoxItem IsSelected="True">Closed</ComboBoxItem>
+              <ComboBoxItem>Open</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Grid.Row="2"
+                      Grid.Column="1"
+                      IsEnabled="False"
+                      Text="Disabled">
+              <ComboBoxItem IsSelected="True">Disabled</ComboBoxItem>
+            </ComboBox>
+          </Grid>
+          <!--  5 CheckBox  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowC}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="CheckBox" />
+            <CheckBox Grid.Row="2"
+                      Grid.Column="0"
+                      Content="Checked"
+                      FontSize="20"
+                      IsChecked="True" />
+            <CheckBox Grid.Row="2"
+                      Grid.Column="1"
+                      Content="Unchecked"
+                      FontSize="20" />
+            <CheckBox Grid.Row="2"
+                      Grid.Column="2"
+                      Content="Disabled"
+                      FontSize="20"
+                      IsEnabled="False" />
+          </Grid>
+          <!--  6 RadioButton  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowC}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnB}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="RadioButton" />
+            <RadioButton Grid.Row="2"
+                         Grid.Column="0"
+                         Content="Checked"
+                         FontSize="20"
+                         IsChecked="True" />
+            <RadioButton Grid.Row="2"
+                         Grid.Column="1"
+                         Content="Unchecked"
+                         FontSize="20" />
+            <RadioButton Grid.Row="2"
+                         Grid.Column="2"
+                         Content="Disabled"
+                         FontSize="20"
+                         IsEnabled="False" />
+          </Grid>
+          <!--  7 ListBox  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowD}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="ListBox" />
+            <ListBox Name="Item"
+                     Grid.Row="2"
+                     Grid.Column="0">
+              <ListBoxItem>Item</ListBoxItem>
+              <ListBoxItem>SelectedItem</ListBoxItem>
+              <ListBoxItem>Hoverstate</ListBoxItem>
+            </ListBox>
+          </Grid>
+          <!--  8 PasswordBox  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowD}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnB}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="PasswordBox" />
+            <PasswordBox Grid.Row="2" Grid.Column="0" />
+            <PasswordBox Grid.Row="2"
+                         Grid.Column="1"
+                         IsEnabled="False" />
+          </Grid>
+
+          <!--  Recommended  -->
+          <Label Grid.Row="{x:Static tools:GridLayout.HeaderRowB}"
+                 Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}"
+                 Grid.ColumnSpan="3"
+                 HorizontalAlignment="Center"
+                 Content="Recommended"
+                 FontSize="30" />
+
+          <!--  9 ListView  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowE}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="ListView" />
+            <ListView Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="3"
+                      ItemsSource="{Binding Items}">
+              <ListView.View>
+                <GridView>
+                  <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
+                  <GridViewColumn DisplayMemberBinding="{Binding Value}" Header="Value" />
+                </GridView>
+              </ListView.View>
+            </ListView>
+          </Grid>
+          <!--  10 TabControl  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowE}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnB}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="TabControl" />
+            <TabControl Grid.Row="2" Grid.Column="0">
+              <TabItem Header="Selected" IsSelected="True"/>
+              <TabItem Header="Unselected" />
+              <TabItem Header="Content Area Border" IsEnabled="False"/>
+            </TabControl>
+          </Grid>
+          <!--  11 Menu  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowF}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnA}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="Menu" />
+            <Menu Grid.Row="2" Grid.Column="0">
+              <MenuItem Header="Option 1" />
+              <MenuItem Header="Option 2" />
+              <MenuItem Header="Option 3" />
+            </Menu>
+          </Grid>
+          <!--  12 ScrollBar (vertical only)  -->
+          <Grid Grid.Row="{x:Static tools:GridLayout.ControlsRowF}" Grid.Column="{x:Static tools:GridLayout.ControlsColumnB}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="5" />
+              <RowDefinition Height="25" />
+              <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="20"
+                       Text="ScrollBar" />
+          </Grid>
+        </Grid>
+      </ScrollViewer>
+    </Border>
+
+    <!--  Settings  -->
+    <Border Grid.Row="1" Grid.Column="2">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                Background="{DynamicResource AccentBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="{DynamicResource GroupBoxBorderThickness}"
+                CornerRadius="{DynamicResource ControlCornerRadius}">
+          <Button Click="OnExportTheme" Content="Export" />
+        </Border>
+        <ScrollViewer Grid.Row="1">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--  Theme Color Picker Panel  -->
+            <Border Grid.Row="0"
+                    Background="{DynamicResource AccentBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="{DynamicResource GroupBoxBorderThickness}"
+                    CornerRadius="{DynamicResource ControlCornerRadius}">
+              <Grid Margin="12" Loaded="OnThemeEditorLoaded">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           Margin="0,0,0,12"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Text="Theme Colors" />
+
+                <views:ColorEditor Grid.Row="1"
+                                   Label="Accent"
+                                   Color="{Binding AccentColor}" />
+                <views:ColorEditor Grid.Row="2"
+                                   Label="Background"
+                                   Color="{Binding BackgroundColor}" />
+                <views:ColorEditor Grid.Row="3"
+                                   Label="Foreground"
+                                   Color="{Binding ForegroundColor}" />
+                <views:ColorEditor Grid.Row="4"
+                                   Label="Border"
+                                   Color="{Binding BorderColor}" />
+              </Grid>
+            </Border>
+            <!--  Font  -->
+            <Border Grid.Row="1"
+                    Background="{DynamicResource AccentBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="{DynamicResource GroupBoxBorderThickness}"
+                    CornerRadius="{DynamicResource ControlCornerRadius}">
+              <StackPanel Margin="12">
+                <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Text="Font" />
+                <TextBlock Margin="0,5,0,12"
+                           FontWeight="Bold"
+                           Text="Size" />
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="10*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBox Grid.Column="0" Text="{Binding BaseFontSize, StringFormat=F2}" />
+                  <Slider Grid.Column="1"
+                          Padding="2,0"
+                          Maximum="50"
+                          Minimum="1"
+                          Value="{Binding BaseFontSize}" />
+                </Grid>
+              </StackPanel>
+            </Border>
+            <!--  Corner Radius  -->
+            <Border Grid.Row="2"
+                    Background="{DynamicResource AccentBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="{DynamicResource GroupBoxBorderThickness}"
+                    CornerRadius="{DynamicResource ControlCornerRadius}">
+              <StackPanel Margin="12">
+                <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Text="Corner Radius" />
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="10*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBox Grid.Column="0" Text="{Binding CornerRadius, StringFormat=F2}" />
+                  <Slider Grid.Column="1"
+                          Padding="2,0"
+                          Value="{Binding CornerRadius}" />
+                </Grid>
+              </StackPanel>
+            </Border>
+            <!--  Border Controls  -->
+            <Border Grid.Row="3"
+                    Background="{DynamicResource AccentBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="{DynamicResource GroupBoxBorderThickness}"
+                    CornerRadius="{DynamicResource ControlCornerRadius}">
+              <StackPanel Margin="12">
+                <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Text="Border Controls" />
+                <TextBlock Margin="0,5,0,12"
+                           FontWeight="Bold"
+                           Text="Thickness" />
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="10*" />
+                  </Grid.ColumnDefinitions>
+                  <TextBox Grid.Column="0" Text="{Binding ControlBorderThickness, StringFormat=F2}" />
+                  <Slider Grid.Column="1"
+                          Padding="2,0"
+                          Value="{Binding ControlBorderThickness}" />
+                </Grid>
+              </StackPanel>
+            </Border>
+            <!--  Button Color Picker Panel  -->
+            <Border Grid.Row="4"
+                    Background="{DynamicResource AccentBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="{DynamicResource GroupBoxBorderThickness}"
+                    CornerRadius="{DynamicResource ControlCornerRadius}">
+              <Grid Margin="12" Loaded="OnThemeEditorLoaded">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           Margin="0,0,0,12"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Text="Button Colors" />
+
+                <views:ColorEditor Grid.Row="1"
+                                   Label="Background"
+                                   Color="{Binding ButtonBackgroundColor}" />
+                <views:ColorEditor Grid.Row="2"
+                                   Label="Foreground"
+                                   Color="{Binding ButtonForegroundColor}" />
+                <views:ColorEditor Grid.Row="3"
+                                   Label="Hover"
+                                   Color="{Binding ButtonHoverColor}" />
+                <views:ColorEditor Grid.Row="4"
+                                   Label="Pressed"
+                                   Color="{Binding ButtonPressedColor}" />
+                <views:ColorEditor Grid.Row="5"
+                                   Label="Disabled Background"
+                                   Color="{Binding ButtonDisabledColor}" />
+                <views:ColorEditor Grid.Row="6"
+                                   Label="Disabled Foreground"
+                                   Color="{Binding ButtonDisabledForegroundColor}" />
+              </Grid>
+            </Border>
+
+          </Grid>
+        </ScrollViewer>
+      </Grid>
+    </Border>
+  </Grid>
+</Window>

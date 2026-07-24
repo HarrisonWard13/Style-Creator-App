@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style TargetType="RadioButton">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+    <Setter Property="Padding" Value="6,0" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="RadioButton">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Outer Circle  -->
+            <Border x:Name="OuterCircle"
+                    Width="16"
+                    Height="16"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource BackgroundBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Cursor="Hand">
+
+              <!--  Inner Dot  -->
+              <Ellipse x:Name="InnerDot"
+                       Width="8"
+                       Height="8"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Fill="{DynamicResource ButtonPressedBrush}"
+                       Visibility="Collapsed" />
+            </Border>
+
+            <!--  Content  -->
+            <ContentPresenter Grid.Column="1"
+                              Margin="{TemplateBinding Padding}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              RecognizesAccessKey="True"
+                              TextBlock.FontFamily="{DynamicResource BaseFontFamily}"
+                              TextBlock.FontSize="{DynamicResource BaseFontSize}" />
+          </Grid>
+
+          <ControlTemplate.Triggers>
+            <!--  Checked  -->
+            <Trigger Property="IsChecked" Value="True">
+              <Setter TargetName="InnerDot" Property="Visibility" Value="Visible" />
+              <Setter TargetName="OuterCircle" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+            </Trigger>
+
+            <!--  Hover  -->
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="OuterCircle" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+            </Trigger>
+
+            <!--  Disabled  -->
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.6" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

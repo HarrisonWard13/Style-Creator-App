@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style TargetType="ListBoxItem">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+    <Setter Property="Padding" Value="6,4" />
+    <Setter Property="FontSize" Value="{DynamicResource BaseFontSize}" />
+    <Setter Property="FontFamily" Value="{DynamicResource BaseFontFamily}" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ListBoxItem">
+          <Border x:Name="Border"
+                  Background="{TemplateBinding Background}"
+                  CornerRadius="{DynamicResource ControlCornerRadius}">
+
+            <ContentPresenter Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              RecognizesAccessKey="True" />
+          </Border>
+
+          <ControlTemplate.Triggers>
+
+            <!--  Hover  -->
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonHoverBrush}" />
+            </Trigger>
+
+            <!--  Selected  -->
+            <Trigger Property="IsSelected" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentBrush}" />
+              <Setter Property="Foreground" Value="White" />
+            </Trigger>
+
+            <!--  Selected + Hover  -->
+            <MultiTrigger>
+              <MultiTrigger.Conditions>
+                <Condition Property="IsSelected" Value="True" />
+                <Condition Property="IsMouseOver" Value="True" />
+              </MultiTrigger.Conditions>
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentBrush}" />
+            </MultiTrigger>
+
+            <!--  Disabled  -->
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

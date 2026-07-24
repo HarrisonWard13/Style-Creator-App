@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!--  =====================  -->
+  <!--  TabItem  -->
+  <!--  =====================  -->
+  <Style TargetType="TabItem">
+    <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
+    <Setter Property="Padding" Value="10,4" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="TabItem">
+          <Border x:Name="Border"
+                  Padding="{TemplateBinding Padding}"
+                  Background="{TemplateBinding Background}"
+                  CornerRadius="{DynamicResource TabItemTopCornerRadius}">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              ContentSource="Header" />
+          </Border>
+
+          <ControlTemplate.Triggers>
+
+            <!--  Selected  -->
+            <Trigger Property="IsSelected" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonPressedBrush}" />
+              <Setter Property="Foreground" Value="White" />
+            </Trigger>
+
+            <!--  Hover  -->
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonHoverBrush}" />
+            </Trigger>
+
+            <!--  Disabled  -->
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!--  =====================  -->
+  <!--  TabControl  -->
+  <!--  =====================  -->
+  <Style TargetType="TabControl">
+    <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="TabControl">
+          <DockPanel>
+
+            <TabPanel Background="{DynamicResource AccentBrush}"
+                      DockPanel.Dock="Top"
+                      IsItemsHost="True" />
+
+            <Border Background="{DynamicResource BackgroundBrush}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{DynamicResource TabControlCornerRadius}">
+
+              <ContentPresenter Margin="6" ContentSource="SelectedContent" />
+
+            </Border>
+
+          </DockPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>
