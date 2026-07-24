@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Style Creator Tester\\StyleTester\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|d:\\style creator tester\\styletester\\styletester\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|solutionrelative:styletester\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|d:\\style creator tester\\styletester\\styletester\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|solutionrelative:styletester\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|d:\\style creator tester\\styletester\\styletester\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|solutionrelative:styletester\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|d:\\style creator tester\\styletester\\styletester\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|solutionrelative:styletester\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|d:\\style creator tester\\styletester\\styletester\\tools\\gridlayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59D61EF4-8450-473E-A5D8-29EF9CA020AB}|StyleTester\\StyleTester.csproj|solutionrelative:styletester\\tools\\gridlayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\App.xaml",
+              "RelativeDocumentMoniker": "StyleTester\\App.xaml",
+              "ToolTip": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\App.xaml",
+              "RelativeToolTip": "StyleTester\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-06T12:20:46.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Theme.xaml",
+              "DocumentMoniker": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\Theme.xaml",
+              "RelativeDocumentMoniker": "StyleTester\\Theme.xaml",
+              "ToolTip": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\Theme.xaml",
+              "RelativeToolTip": "StyleTester\\Theme.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-06T12:20:30.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GridLayout.cs",
+              "DocumentMoniker": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\Tools\\GridLayout.cs",
+              "RelativeDocumentMoniker": "StyleTester\\Tools\\GridLayout.cs",
+              "ToolTip": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\Tools\\GridLayout.cs",
+              "RelativeToolTip": "StyleTester\\Tools\\GridLayout.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:46:50.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "StyleTester\\MainWindow.xaml",
+              "ToolTip": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\MainWindow.xaml",
+              "RelativeToolTip": "StyleTester\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-01T19:44:40.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "StyleTester\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Style Creator Tester\\StyleTester\\StyleTester\\MainWindow.xaml.cs",
+              "RelativeToolTip": "StyleTester\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAxwCoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:44:37.823Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
